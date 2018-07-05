@@ -1,4 +1,4 @@
-// ==== Bubble Sort Algorithm =================================================
+// ==== Bubble Sort Iterative Algorithm =================================================
 //
 // input:
 //          arr[] - array to be sorted
@@ -28,6 +28,26 @@ void bubbleSort(int arr[],int length)
 }//end of bubbleSort
 // ============================================================================
 
+
+// ==== Bubble Sort Recursive Algorithm =======================================
+// 
+// ============================================================================
+void bubbleSort(int arr[], int length)
+{
+    //base case
+    if(lenght == 1)
+        return;
+    
+    //moves the largest element to the back of the array
+    for(int x = 0; x < length-1; x++)
+        if(arr[x] > arr[x+1])
+            swap(&arr[x],&arr[x+1]);
+    
+    //largest element stays where it is
+    //repeat
+    bubbleSort(arr,length-1);     
+}//end of bubble sort
+// ============================================================================
 
 
 // ==== swap ==================================================================
